@@ -11,17 +11,10 @@ public class MainActivity extends Activity {
 	TextView tvOut;
 	Button btnOk;
 	Button btnCancel;
+	EditText EditText;
 	
 	
-	public interface GetTime {
-		public long now();
-	}
 	
-	public GetTime SystemTime = new GetTime() {
-		@Override
-		public long now() {	return System.currentTimeMillis(); }
-	};
-
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,15 +25,32 @@ public class MainActivity extends Activity {
 		tvOut = (TextView) findViewById(R.id.tvOut);
 		btnOk = (Button) findViewById(R.id.btnOk);
 		btnCancel = (Button) findViewById(R.id.btnCancel);
-
+		EditText= (EditText) findViewById(R.id.EditText);
+		
 		// создаем обработчик нажатия
 		OnClickListener oclBtnOk = new OnClickListener() {
+			long time = 0;
+			long oldTime = 0;
+			long delta = 0;
+			
+			int s; 
+			
 			@Override
-			public void onClick(View v) {
+			public void onClick(View view) {
 				// Меняем текст в TextView (tvOut)
-				tvOut.setText("C" + SystemTime);
+				time  = System.currentTimeMillis();
+				delta = time - oldTime;
+				s = Integer.parseInt(EditText.getText().toString());
 				
-
+				if (oldTime > 0) {   
+				float v = s/delta;
+				float ch = delta ;
+					tvOut.setText(""+v );
+				}  
+				
+				oldTime=time;
+				
+				
 				}
 				};
 			
