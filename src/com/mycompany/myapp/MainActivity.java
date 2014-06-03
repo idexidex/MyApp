@@ -24,10 +24,10 @@ public class MainActivity extends Activity {
 		// найдем View-элементы
 		tvOut = (TextView) findViewById(R.id.tvOut);
 		btnOk = (Button) findViewById(R.id.btnOk);
-		btnCancel = (Button) findViewById(R.id.btnCancel);
 		EditText= (EditText) findViewById(R.id.EditText);
 		
 		// создаем обработчик нажатия
+		
 		OnClickListener oclBtnOk = new OnClickListener() {
 			long time = 0;
 			long oldTime = 0;
@@ -40,12 +40,19 @@ public class MainActivity extends Activity {
 				// Меняем текст в TextView (tvOut)
 				time  = System.currentTimeMillis();
 				delta = time - oldTime;
-				s = Integer.parseInt(EditText.getText().toString());
+				//s = Integer.parseInt(EditText.getText().toString());
 				
 				if (oldTime > 0) {   
-				float v = s/delta;
-				float ch = delta ;
-					tvOut.setText(""+v );
+				float b = (float) 0.000000278;
+					float z = (float) 0.001;
+					
+				float h = delta * z ;
+				float ss = (float) 0.002089;
+				float v = ss/h;
+				//DecimalFormat df = new DecimalFormat("#.#####"); df.format(0.912385);
+				
+				
+					tvOut.setText(""+ h);
 				}  
 				
 				oldTime=time;
@@ -57,17 +64,19 @@ public class MainActivity extends Activity {
 
 		// присвоим обработчик кнопке OK (btnOk) иии
 		btnOk.setOnClickListener(oclBtnOk);
+
 		
-		
-    OnClickListener oclBtnCancel = new OnClickListener() {
+}
 		@Override
-		public void onClick(View v) {
-			// Меняем текст в TextView (tvOut)
-			tvOut.setText("Нажата кнопка Cancel");
-			}
-			};
-			
-			btnCancel.setOnClickListener(oclBtnCancel);
+
+	public boolean  onKeyDown(int keyCode, KeyEvent event) {
+		// Обработайте нажатие, верните true, если обработка выполнена
+		if (keyCode == KeyEvent.KEYCODE_INFO)
+		{
+			tvOut.setText("ok");
+		return true;
 		
+			} 
+	 return super.onKeyDown(keyCode, event);
 	 }
 	 }

@@ -18,16 +18,21 @@
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_horizontal"
 			android:layout_marginBottom="50dp"
+			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:text="TextView">
 
 		</TextView>
 
 		<EditText
 			android:layout_height="wrap_content"
-			android:inputType="number"
 			android:ems="10"
 			android:layout_width="wrap_content"
-			android:id="@+id/EditText"/>
+			android:id="@+id/EditText"
+			android:gravity="center_vertical|center_horizontal"
+			android:inputType="numberDecimal"
+			android:layout_gravity="center">
+
+		</EditText>
 
 		<Button
 			android:id="@+id/btnOk"
@@ -35,15 +40,6 @@
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_horizontal"
 			android:text="OK">
-
-		</Button>
-
-		<Button
-			android:id="@+id/btnCancel"
-			android:layout_width="100dp"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"
-			android:text="Cancel">
 
 		</Button>
 
