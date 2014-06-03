@@ -5,6 +5,7 @@ import android.os.*;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
+import java.text.*;
 
 public class MainActivity extends Activity {
 
@@ -43,16 +44,16 @@ public class MainActivity extends Activity {
 				//s = Integer.parseInt(EditText.getText().toString());
 				
 				if (oldTime > 0) {   
-				float b = (float) 0.000000278;
-					float z = (float) 0.001;
-					
-				float h = delta * z ;
-				float ss = (float) 0.002089;
+				float b = (float) 0.000000278;// часов в одной милисек
+				float h = delta * b;
+				float ss = (float) 0.002089;//длина окружности колеса 16 " в КМ
+				float sss= (float) 0.000001;// мм в км
 				float v = ss/h;
-				//DecimalFormat df = new DecimalFormat("#.#####"); df.format(0.912385);
+				DecimalFormat df = new DecimalFormat("#.#");
+				//df.format(0.912385);
 				
 				
-					tvOut.setText(""+ h);
+					tvOut.setText(""+ df.format(v)+ "КМ/Ч");
 				}  
 				
 				oldTime=time;
