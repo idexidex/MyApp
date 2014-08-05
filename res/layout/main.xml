@@ -53,6 +53,13 @@
 
 		</Button>
 
+		<Button
+			android:layout_height="wrap_content"
+			android:text="СБРОС"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/cnl"/>
+
 	</LinearLayout>
 
 </LinearLayout>

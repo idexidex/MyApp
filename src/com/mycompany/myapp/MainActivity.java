@@ -14,6 +14,8 @@ public class MainActivity extends Activity {
 	Button btnCancel;
 	EditText EditText;
 	TextView distanse;
+	Button cnl;
+	float ddistanse = 0;
 	
 	
 	
@@ -29,6 +31,8 @@ public class MainActivity extends Activity {
 		btnOk = (Button) findViewById(R.id.btnOk);
 		EditText= (EditText) findViewById(R.id.EditText);
 		distanse = (TextView) findViewById(R.id.distanse);
+		cnl = (Button) findViewById(R.id.cnl);
+		
 	/* @Override
 	public boolean  onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_INFO)
@@ -41,13 +45,12 @@ public class MainActivity extends Activity {
 		
 		*/
 		// создаем обработчик нажатия
-		
+	
 		
 		OnClickListener oclBtnOk = new OnClickListener() {
 			long time = 0;
 			long oldTime = 0;
 			long delta = 0;
-			float ddistanse = 0;
 			int s; 
 			
 			@Override
@@ -82,10 +85,22 @@ public class MainActivity extends Activity {
 				}
 				};
 			
-
+				
+			
 		// присвоим обработчик кнопке OK (btnOk) иии
 		btnOk.setOnClickListener(oclBtnOk);
-
+		OnClickListener oclcnl = new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				float ddistanse = 0;
+				DecimalFormat tf = new DecimalFormat("#.###");
+				
+				distanse.setText("" + tf.format(ddistanse) + "КМ");
+			
+				}
+				};
+		cnl.setOnClickListener(oclcnl);
+		
 		}
 		@Override
 
