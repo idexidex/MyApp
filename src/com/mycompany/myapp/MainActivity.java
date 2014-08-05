@@ -14,8 +14,17 @@ public class MainActivity extends Activity {
 	Button btnCancel;
 	EditText EditText;
 	TextView distanse;
+	TextView Time;
 	Button cnl;
+	TextView lap1;
+	TextView lap2;
+	TextView lap3;
+	TextView lap4;
+	TextView lap5;
+	TextView lap6;
+	 
 	float ddistanse = 0;
+	
 	
 	
 	
@@ -29,23 +38,31 @@ public class MainActivity extends Activity {
 		// найдем View-элементы
 		tvOut = (TextView) findViewById(R.id.tvOut);
 		btnOk = (Button) findViewById(R.id.btnOk);
-		EditText= (EditText) findViewById(R.id.EditText);
+		Time= (TextView) findViewById(R.id.Time);
 		distanse = (TextView) findViewById(R.id.distanse);
 		cnl = (Button) findViewById(R.id.cnl);
+		lap1 = (TextView) findViewById(R.id.lap1);
+		lap2 = (TextView) findViewById(R.id.lap2);
+		lap3 = (TextView) findViewById(R.id.lap3);
+		lap4 = (TextView) findViewById(R.id.lap4);
+		lap5 = (TextView) findViewById(R.id.lap5);
+		lap6 = (TextView) findViewById(R.id.lap6);
 		
-	/* @Override
-	public boolean  onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_INFO)
-		btnOk.performClick(); //тормозит при быстром нажатии
-		return true;
-
-	} 
-	return super.onKeyDown(keyCode, event);
-	}
-		
-		*/
-		// создаем обработчик нажатия
 	
+		//пытаюсь зоздать обработку поле время , чтобы оно стартовало только при первом нажатии
+	/*	public void T( View view){
+			int t=0;
+			
+			@Override
+			
+			//t ++;
+			if (t>0)
+				{
+				*/
+			
+//создаю обработчик кнопки кгруг чтобы записывать значения в текстовые поля lap1 > lap6
+	//	OnClickListener oclLAP = new OnClickListener() {
+			
 		
 		OnClickListener oclBtnOk = new OnClickListener() {
 			long time = 0;
@@ -53,11 +70,13 @@ public class MainActivity extends Activity {
 			long delta = 0;
 			int s; 
 			
+			
 			@Override
 			public void onClick(View view) {
 				// Меняем текст в TextView (tvOut)
 				time  = System.currentTimeMillis();
 				delta = time - oldTime;
+				
 				//s = Integer.parseInt(EditText.getText().toString());
 				
 				if (oldTime > 0) {   
@@ -92,7 +111,7 @@ public class MainActivity extends Activity {
 		OnClickListener oclcnl = new OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				float ddistanse = 0;
+				ddistanse = 0;
 				DecimalFormat tf = new DecimalFormat("#.###");
 				
 				distanse.setText("" + tf.format(ddistanse) + "КМ");
@@ -105,7 +124,9 @@ public class MainActivity extends Activity {
 		@Override
 
 	public boolean  onKeyDown(int keyCode, KeyEvent event) {
-			/*/Обработайте нажатие, верните true, если обработка выполнена
+			
+		//super.onKeyUp(keyCode, event);
+		/*/Обработайте нажатие, верните true, если обработка выполнена
 			  
 			long time = 0;
 			long oldTime = 0;
@@ -126,21 +147,43 @@ public class MainActivity extends Activity {
 
 				*/
 			
-		if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN )//  INFO)
+		if (keyCode == KeyEvent.KEYCODE_Q /*KEYCODE_VOLUME_DOWN */)//  INFO)
 			btnOk.performClick(); //тормозит при быстром нажатии
-		{
+			{
+		/*	long time = 0;
+			long oldTime = 0;
+			long delta = 0;
+
+			int s; 
+			time  = System.currentTimeMillis();
+			delta = time - oldTime;
+			if (oldTime > 0) {  // Как послеэтого ставить return
+				//return true;
+				//}
+				float b = (float) 0.000000278;// часов в одной милисек
+				float h = delta * b;
+				float ss = (float) 0.002089;//длина окружности колеса 16 " в КМ
+				float sss= (float) 0.000001;// мм в км
+				float v = ss/h;
+				DecimalFormat df = new DecimalFormat("#.#");
 				
-			/*tvOut.setText(""+ df.format(v)+ " КМ/Ч");
+		
+				
+			tvOut.setText(""+ df.format(v)+ " КМ/Ч");
 			
 			oldTime=time;*/
 			}
+			
+			
+			
 			return true;
 		
 			}
 			
-	// return super.onKeyDown(keyCode, event);
+	//return super.onKeyDown(keyCode, event);
 	 
 	 
 	 
 	 
 	 }
+	

@@ -18,11 +18,21 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_horizontal"
-			android:layout_marginBottom="50dp"
+			android:layout_marginBottom="23dp"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:text="СКОРОСТЬ">
 
 		</TextView>
+
+		<TextView
+			android:layout_height="0dp"
+			android:text="ВРЕМЯ"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/Time"
+			android:layout_marginBottom="14dp"
+			android:visibility="visible"/>
 
 		<TextView
 			android:layout_height="wrap_content"
@@ -32,24 +42,13 @@
 			android:layout_gravity="center_horizontal"
 			android:id="@+id/distanse"/>
 
-		<EditText
-			android:layout_height="wrap_content"
-			android:ems="10"
-			android:layout_width="wrap_content"
-			android:id="@+id/EditText"
-			android:gravity="center_vertical|center_horizontal"
-			android:inputType="numberDecimal"
-			android:layout_gravity="center"
-			android:visibility="invisible">
-
-		</EditText>
-
 		<Button
 			android:id="@+id/btnOk"
 			android:layout_width="100dp"
-			android:layout_height="wrap_content"
+			android:layout_height="0dp"
 			android:layout_gravity="center_horizontal"
-			android:text="OK">
+			android:text="OK"
+			android:visibility="invisible">
 
 		</Button>
 
@@ -60,6 +59,61 @@
 			android:layout_gravity="center_horizontal"
 			android:id="@+id/cnl"/>
 
+		<Button
+			android:layout_height="wrap_content"
+			android:text="КРУГ"
+			android:layout_width="match_parent"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/lap"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/lap1"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/lap2"/>
+		<TextView
+			android:layout_height="wrap_content"
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/lap3"/>
+		
+		<TextView
+			android:layout_height="wrap_content"
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/lap4"/>
+		<TextView
+			android:layout_height="wrap_content"
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/lap5"/>
+		
+		<TextView
+			android:layout_height="wrap_content"
+			android:text=""
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/lap6"/>
+		
+		
+		
 	</LinearLayout>
 
 </LinearLayout>
